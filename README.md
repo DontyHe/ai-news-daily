@@ -1,63 +1,70 @@
-# AI News Daily
+# AI Daily News
 
-Daily AI Research News aggregator for World Models & VLA research.
+Daily AI research news aggregator for VLA, World Models, and Embodied AI.
 
 ## Features
 
-- 📰 Daily updated AI research news
-- 🏷️ Category filtering (World Model, VLA, Multi-Modal, etc.)
+- 📰 Aggregated AI news from multiple sources
+- 🏷️ Category filtering (VLA, World Model, Embodied AI, LLM)
 - 🔍 Search functionality
+- 🌙 Dark mode support
 - 📱 Responsive design
-- 🔄 Auto-syncs from Feishu document
 
-## Setup
+## Data Sources
 
-1. Install dependencies:
+- arXiv papers
+- Twitter/X AI researchers
+- AI newsletters (Interconnects, Bertie)
+- Feishu VLA Research Tracker
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Vercel (Deployment)
+
+## Getting Started
+
 ```bash
 npm install
-```
-
-2. Run development server:
-```bash
 npm run dev
 ```
 
-3. Build for production:
-```bash
-npm run build
-```
+Open [http://localhost:3000](http://localhost:3000) to view.
 
 ## Deployment to Vercel
 
-This project is configured for automatic deployment to Vercel.
+1. Create a Vercel account and connect your GitHub
+2. Import this repository
+3. Add environment variables (if any)
+4. Deploy!
 
-### Option 1: Vercel CLI (Recommended)
+## Manual Vercel Deployment
 
 ```bash
 npm i -g vercel
 vercel
 ```
 
-### Option 2: GitHub Integration
+## GitHub + Vercel Auto-Deploy
 
-1. Push this repo to GitHub
-2. Import project in Vercel
-3. Auto-deployment configured via `.github/workflows/deploy.yml`
+1. Push to GitHub:
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin https://github.com/DontyHe/ai-news-daily.git
+   git push -u origin main
+   ```
 
-## Data Source
+2. Get Vercel Token:
+   - Go to [Vercel Account Settings](https://vercel.com/account/tokens)
+   - Create a new token
 
-News is automatically aggregated daily from:
-- arxiv.org (World Models, VLA, Embodied AI)
-- Source document: [VLA研究追踪](https://my.feishu.cn/wiki/JSBmwzcjTicu1Hk5ib0ci99bnXF)
+3. Add Secrets to GitHub:
+   - Go to your repo Settings → Secrets and variables → Actions
+   - Add `VERCEL_TOKEN`
+   - Add `VERCEL_ORG_ID` (from Vercel dashboard)
+   - Add `VERCEL_PROJECT_ID` (from Vercel dashboard)
 
-## Tech Stack
-
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Lucide Icons
-- Vercel (Deployment)
-
-## License
-
-MIT
+4. Push changes to trigger auto-deploy!
