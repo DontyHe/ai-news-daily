@@ -10,6 +10,23 @@ export interface NewsArticle {
   tags: string[];
 }
 
+export interface ResearchPaper {
+  id: string;
+  title: string;
+  authors: string;
+  date: string;
+  summary: string;
+  keyInsights: string[];
+  url: string;
+  category: 'vla' | 'world-model' | 'embodied' | 'llm' | 'general';
+}
+
+export interface DailyDigest {
+  date: string;
+  news: NewsArticle[];
+  papers: ResearchPaper[];
+}
+
 export type Category = 'all' | 'vla' | 'world-model' | 'embodied' | 'llm' | 'general';
 
 export const CATEGORIES: { key: Category; label: string; emoji: string }[] = [
