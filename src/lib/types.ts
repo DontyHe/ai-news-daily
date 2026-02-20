@@ -8,6 +8,7 @@ export interface NewsArticle {
   category: Category;
   url: string;
   tags: string[];
+  imageUrl?: string;  // Optional news image
 }
 
 export interface ResearchPaper {
